@@ -1,1 +1,55 @@
-<p>blog works!</p>
+<div class="container">
+  <!-- Área para el formulario -->
+  <section id="formulario">
+    <h1>Formulario</h1>
+    <hr />
+    <div>
+      <div>
+        <label for="name">Título de la notícia: </label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Introduce el título de la notícia"
+          [(ngModel)]="newNoticia.title"
+        />
+      </div>
+      <div>
+        <label for="url">URL de la imagen: </label>
+        <input
+          type="text"
+          id="url"
+          placeholder="Introduce la URL de la imagen"
+          [(ngModel)]="newNoticia.url"
+        />
+      </div>
+      <div>
+        <label for="text">Cuerpo de la notícia: </label>
+        <input
+          type="text"
+          id="text"
+          placeholder="Escribe aquí el contenido de la notícia"
+          [(ngModel)]="newNoticia.text"
+        />
+      </div>
+      <div>
+        <label for="publicationdate">Fecha de publicación: </label>
+        <input
+          type="date"
+          id="publicationdate"
+          placeholder="Introduce la fecha de publicación"
+          [(ngModel)]="newNoticia.publicationdate"
+        />
+      </div>
+      <button (click)="guardarNoticia()">Guardar</button>
+    </div>
+  </section>
+
+  <!-- Área para las notícias-->
+
+  <section id="noticias">
+    <h1>Notícias</h1>
+    <hr />
+    <div [innerHTML]="cargarNoticias()"></div>
+    <!--Usando la propiedad y la función [innerHTML]="cargarNoticias()" pintamos toda la array de notícias-->
+  </section>
+</div>
